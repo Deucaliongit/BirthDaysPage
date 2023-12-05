@@ -16,9 +16,9 @@ code {
   font-family: oleo;
 }
 
-body {
+/* body {
   background-color: rgb(255, 117, 110);
-}
+} */
 
 .body {
   display: flex;
