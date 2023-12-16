@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Bg1 from "../img/bg2.png";
 import { Link } from "react-router-dom";
 import { FaEnvelope, FaEnvelopeOpen } from "react-icons/fa";
+import music from "../img/backsound.mp3";
 
 const Home = () => {
   const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div
       className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat"
@@ -15,6 +17,7 @@ const Home = () => {
           <h1 className="oleo text-4xl md:py-10 md:text-[80px] font-bold text-white">
             Happy Birthdays
           </h1>
+
           <span className="px-2 oleo text-3xl font-bold md:text-[70px] text-white">
             Aqila Shearin Ramadhantya
           </span>
