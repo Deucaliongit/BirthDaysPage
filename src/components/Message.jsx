@@ -1,8 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useMusic } from "../components/MusicContext";
+import music from "../img/backsound.mp3";
 
 const Message = () => {
   const [loaded, setLoaded] = useState(false);
+
+  const { playMusic } = useMusic();
+
+  useEffect(() => {
+    playMusic();
+    console.log("Musik diputar dari komponen Message");
+  }, [playMusic]);
 
   useEffect(() => {
     // Setelah komponen dimuat, atur loaded menjadi true untuk memulai efek opacity.
@@ -15,6 +24,10 @@ const Message = () => {
       }`}
     >
       <div className="birthdayCard shadow-md">
+        <audio autoPlay loop>
+          <source src={music} type="audio/mp3" />
+          Your browser does not support the audio element.
+        </audio>
         <div className="cardFront shadow-md">
           <h3 className="happy bg-sky-500 text-white font-bold">
             Dear My Future Wife

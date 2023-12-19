@@ -3,18 +3,19 @@ import "./App.css";
 import Home from "./components/Home";
 import Message from "./components/Message";
 import Gallery from "./components/Gallery";
+import { MusicProvider } from "./components/MusicContext";
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
+    <BrowserRouter>
+      <MusicProvider>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/message" element={<Message />}></Route>
-          <Route path="/memories" element={<Gallery />}></Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/message" element={<Message />} />
+          <Route path="/memories" element={<Gallery />} />
         </Routes>
-      </BrowserRouter>
-    </div>
+      </MusicProvider>
+    </BrowserRouter>
   );
 }
 
