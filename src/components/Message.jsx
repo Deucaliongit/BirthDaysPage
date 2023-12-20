@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useMusic } from "../components/MusicContext";
-import music from "../img/backsound.mp3";
+import music from "../img/music2.mp3";
 
 const Message = () => {
   const [loaded, setLoaded] = useState(false);

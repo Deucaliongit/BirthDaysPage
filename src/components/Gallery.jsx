@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import imgbg from "../img/bgWe.jpg";
 import img1 from "../img/1.webp";
 import img2 from "../img/2.webp";
@@ -12,8 +12,13 @@ import img9 from "../img/9.webp";
 import img10 from "../img/10.webp";
 import img11 from "../img/11.webp";
 import img12 from "../img/12.webp";
+import gift from "../img/gift-box.gif";
+import ring from "../img/ring.gif";
 
 import Photo from "./minicomponents/Photo";
+import { useMusic } from "../components/MusicContext";
+import music from "../img/music2.mp3";
+
 const Gallery = () => {
   const photo = [
     {
@@ -66,13 +71,19 @@ const Gallery = () => {
     },
   ];
 
+  const { playMusic } = useMusic();
+
+  useEffect(() => {
+    playMusic();
+    console.log("Musik diputar dari komponen Message");
+  }, [playMusic]);
+
   return (
     <div className="max-w-full h-screen">
-      <img
-        className="object-cover w-full h-screen absolute inset-0 z-0"
-        src={imgbg}
-        alt="/"
-      />
+      <audio autoPlay loop>
+        <source src={music} type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio>
       <Photo image={photo} />
     </div>
   );
